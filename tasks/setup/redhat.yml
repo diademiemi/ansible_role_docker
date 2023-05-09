@@ -1,0 +1,27 @@
+---
+- name: Ensure yum dependencies are installed
+  become: true
+  ansible.builtin.yum:
+    name:
+      - yum-utils
+    state: present
+
+- name: Add Docker Yum Repo
+  become: true
+  ansible.builtin.yum_repository:
+    name: docker-ce
+    description: Docker CE Stable - $basearch
+    baseurl: https://download.docker.com/linux/{{ docker_el_os_name }}/$releasever/$basearch/stable
+    enabled: true
+    gpgkey: https://download.docker.com/linux/{{ docker_el_os_name }}/gpg
+    gpgcheck: true
+    state: present
+
+- name: Install Docker
+  become: true
+  ansible.builtin.yum:
+    name: "{{ docker_packages }}"
+    state: present
+    update_cache: true
+
+...

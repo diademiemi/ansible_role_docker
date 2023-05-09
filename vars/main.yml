@@ -1,5 +1,5 @@
 ---
-__role_name: "template"
+__role_name: "docker"
 __role_file_search_order:
   - "{{ (ansible_facts['distribution'] | lower) | replace(' ', '_') }}_\
     {{ ansible_facts['distribution_version'] }}.yml"
@@ -8,5 +8,6 @@ __role_file_search_order:
   - "{{ (ansible_facts['distribution'] | lower) | replace(' ', '_') }}.yml"
   - "{{ ansible_facts['os_family'] | lower }}.yml"
   - "default.yml"
+
 
 ...

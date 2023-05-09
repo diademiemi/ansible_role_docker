@@ -5,6 +5,9 @@
   hosts: all
   gather_facts: false
   tasks:
-    - name: Example assertion
-      ansible.builtin.assert:
-        that: true
+    - name: Check that Docker is installed
+      ansible.builtin.command: docker version
+      register: docker_version
+      changed_when: false
+
+...

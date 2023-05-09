@@ -1,3 +1,9 @@
 ---
+docker_add_users_to_group: true
+docker_users:
+ - "{{ ansible_user_id }}"
 
+docker_packages: "{{ _docker_packages }}"
+docker_uninstall_old_packages: "{{ _docker_uninstall_old_packages }}"
+docker_el_os_name: "{{ _docker_el_os_name }}"
 ...
