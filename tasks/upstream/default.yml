@@ -12,7 +12,7 @@
 #       vars:
 #         upstream_role_var: "{{ upstream_role_var | default(docker_role_var) }}"
 #                                                   ^ Pass our vars to upstream
-
+#
 #  rescue:
 #     - name: "Upstream | Handle errors"
 #       ansible.builtin.fail:
