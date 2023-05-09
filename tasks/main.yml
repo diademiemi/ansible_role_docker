@@ -15,7 +15,7 @@
         - "vars"
     __role_found_vars: "{{ lookup('ansible.builtin.first_found', __role_find_vars) }}"
   when: __role_found_vars | length > 0
-  loop: "{{ __role_file_search_order | reverse }}"
+  loop: "{{ __role_file_search_order | reverse | unique }}"
   loop_control:
     loop_var: __role_var_search
 
@@ -30,12 +30,12 @@
         - "assert"
     __role_found_asserts: "{{ lookup('ansible.builtin.first_found', __role_find_asserts) }}"
   when: __role_found_asserts | length > 0
-  loop: "{{ __role_file_search_order | reverse }}"
+  loop: "{{ __role_file_search_order | reverse | unique }}"
   loop_control:
     loop_var: __role_assert_search
 
 # Run tasks specific to this platform
-- name: "Main | platform/version specific tasks"
+- name: "Main | Run platform/version specific tasks"
   ansible.builtin.include_tasks: "{{ __role_found_tasks }}"
   vars:
     __role_find_tasks:
