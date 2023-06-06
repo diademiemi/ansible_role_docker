@@ -19,6 +19,11 @@
 output/
 .collection_root/*
 
+**/collections/**
+!**/collections/requirements.yml
+**/roles/**
+!**/roles/requirements.yml
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
