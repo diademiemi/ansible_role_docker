@@ -12,7 +12,8 @@ _docker_packages_sles_s390x:
   - docker-buildx-plugin
   - docker-compose-plugin
 
-_docker_packages: "{% if ansible_facts['architecture'] == 's390x' %}{{ _docker_packages_sles_s390x | list }}{% else %}{{ _docker_packages_opensuse | list }}{% endif %']}"
+_docker_packages: "{% if ansible_facts['architecture'] == 's390x' %}{{ _docker_packages_sles_s390x | list }}\
+  {% else %}{{ _docker_packages_opensuse | list }}{% endif %}"
 
 _docker_uninstall_old_packages:
   - docker
