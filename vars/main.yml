@@ -19,5 +19,4 @@ __role_file_search_order:
   - "{{ ansible_facts['os_family'] | lower }}.yml"  # redhat.yml
   - "default.yml"  # default.yml
 
-
 ...

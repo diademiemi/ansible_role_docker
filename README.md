@@ -17,6 +17,7 @@ These platforms are supported:
 - EL 8 (Tested on Rocky Linux 8)  
 - EL 9 (Tested on Rocky Linux 9)  
 - Fedora 38  
+- openSUSE Leap 15.4
 
 <!-- 
 - List hardware requirements here  
@@ -31,7 +32,7 @@ Variable | Default | Description
 `docker_users` | `[{{ ansible_user_id }}]` | Users to add to Docker group
 `docker_packages` | See [vars/](./vars) | Packages to install
 `docker_uninstall_old_packages` | See [vars/](./vars) | Which packages to install when `__role_action` is `uninstall_old`
-`docker_el_os_name` | See [vars/](./vars) | Repository name for Enterprise Linux operating systems
+`docker_el_os_name` | See [vars/](./vars) | Repository name for RHEL-based Linux operating systems
 <!--
 `variable` | `default` | Variable example
 `long_variable` | See [defaults/main.yml](./defaults/main.yml) | Variable referring to defaults

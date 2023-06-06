@@ -1,0 +1,28 @@
+---
+_docker_packages_opensuse:
+  - docker
+  - docker-compose
+  - docker-compose-switch
+  - python3-docker-compose
+
+_docker_packages_sles_s390x:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin
+
+_docker_packages: "{% if ansible_facts['architecture'] == 's390x' %}{{ _docker_packages_sles_s390x | list }}{% else %}{{ _docker_packages_opensuse | list }}{% endif %']}"
+
+_docker_uninstall_old_packages:
+  - docker
+  - docker-client
+  - docker-client-latest
+  - docker-common
+  - docker-latest
+  - docker-latest-logrotate
+  - docker-logrotate
+  - docker-engine
+  - runc
+
+...

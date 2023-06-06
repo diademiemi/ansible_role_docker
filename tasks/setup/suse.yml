@@ -1,0 +1,33 @@
+---
+- name: Tasks
+  when: not ansible_facts['architecture'] == 's390x'
+  block:
+    - name: Add Python Devel repo
+      become: true
+      community.general.zypper_repository:
+        repo: "https://download.opensuse.org/repositories/devel:/languages:/python/{{ ansible_facts['distribution_version'] }}/devel:languages:python.repo"
+        state: present
+
+- name: Tasks for the s390x architecture
+  when: ansible_facts['architecture'] == 's390x'
+  block:
+    - name: Add SUSE Security Repo
+      become: true
+      community.general.zypper_repository:
+        repo: "https://download.opensuse.org/repositories/security:SELinux/15.4/security:SELinux.repo"
+        state: present
+
+    - name: Add Docker Repo
+      become: true
+      community.general.zypper_repository:
+        repo: "https://download.docker.com/linux/sles/docker-ce.repo"
+        state: present
+
+- name: Install Docker
+  become: true
+  ansible.builtin.yum:
+    name: "{{ docker_packages }}"
+    state: present
+    update_cache: true
+
+...

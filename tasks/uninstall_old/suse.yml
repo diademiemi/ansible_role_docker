@@ -1,0 +1,8 @@
+---
+- name: Uninstall old versions
+  become: true
+  community.general.zypper:
+    name: "{{ docker_uninstall_old_packages }}"
+    state: absent
+
+...

@@ -18,6 +18,6 @@ _docker_uninstall_old_packages:
   - docker-engine-selinux
   - docker-engine
 
-_docker_el_os_name: rhel
+_docker_el_os_name: "{% if ansible_facts['architecture'] == 's390x' %}rhel{% else %}centos{% endif %}"
 
 ...
