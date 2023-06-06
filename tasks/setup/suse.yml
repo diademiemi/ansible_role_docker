@@ -25,9 +25,8 @@
 
 - name: Install Docker
   become: true
-  ansible.builtin.yum:
+  community.general.zypper:
     name: "{{ docker_packages }}"
     state: present
-    update_cache: true
 
 ...
