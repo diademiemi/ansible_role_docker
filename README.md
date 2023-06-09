@@ -48,11 +48,13 @@ Example Playbook
 ----------------
 
 ```yaml
+- name: Use diademiemi.docker role
+  hosts: "{{ target | default('docker') }}"
+  roles:
     - role: "diademiemi.docker"
       vars:
-        __role_action: # Variable to control which tasks are ran
-          # - "uninstall_old" # Uncomment to uninstall old packages
-          - "setup" # Default if none is given
+        __role_action: "setup"  # Variable to control which tasks are ran, default is "setup"
+        # __role_action: "uninstall_old" # Uncomment to uninstall old packages
       tags: ['diademiemi', 'docker', 'setup']    ```
 
 ```
