@@ -1,0 +1,16 @@
+---
+image: quay.io/podman/stable
+
+before_script:
+  - dnf install -y python3-pip
+  - python3 -m pip install --upgrade pip
+  - python3 -m pip install -r requirements.txt
+  - ansible-galaxy install -r requirements.yml
+  - podman info
+  - ansible --version
+  - molecule --version
+
+molecule:
+  stage: test
+  script:
+    - molecule test
