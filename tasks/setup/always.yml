@@ -21,6 +21,7 @@
   vars:
     python_pip_global_packages:
       - name: docker
+      - name: docker-compose
   when: docker_install_pip_package
 
 ...
