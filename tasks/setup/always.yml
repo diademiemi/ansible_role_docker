@@ -15,4 +15,12 @@
   loop: "{{ docker_users }}"
   when: docker_add_users_to_group
 
+- name: Include Pip role
+  ansible.builtin.include_role:
+    name: diademiemi.python.pip
+  vars:
+    python_pip_global_packages:
+      - name: docker
+  when: docker_install_pip_package
+
 ...

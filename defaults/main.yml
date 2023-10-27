@@ -6,4 +6,6 @@ docker_users:
 docker_packages: "{{ _docker_packages }}"
 docker_uninstall_old_packages: "{{ _docker_uninstall_old_packages }}"
 docker_el_os_name: "{{ _docker_el_os_name }}"
+
+docker_install_pip_package: true
 ...
