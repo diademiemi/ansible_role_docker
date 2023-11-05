@@ -5,7 +5,7 @@
     - name: Add Python Devel repo
       become: true
       community.general.zypper_repository:
-        repo: "https://download.opensuse.org/repositories/devel:/languages:/python/15.5/devel:languages:python.repo"
+        repo: "https://download.opensuse.org/repositories/devel:languages:python/15.6/devel:languages:python.repo"
         state: present
 
 - name: Tasks for the s390x architecture
