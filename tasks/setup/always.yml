@@ -19,9 +19,7 @@
   ansible.builtin.include_role:
     name: diademiemi.python.pip
   vars:
-    python_pip_global_packages:
-      - name: docker
-      - name: docker-compose
+    python_pip_global_packages: "{{ docker_pip_global_packages }}"
   when: docker_install_pip_package
 
 ...

@@ -1,4 +1,11 @@
 ---
 _docker_el_os_name: fedora
+_docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin
+  - docker-compose
 
 ...

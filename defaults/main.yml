@@ -8,4 +8,6 @@ docker_uninstall_old_packages: "{{ _docker_uninstall_old_packages }}"
 docker_el_os_name: "{{ _docker_el_os_name }}"
 
 docker_install_pip_package: true
+docker_pip_global_packages: "{{ _docker_pip_global_packages }}"
+
 ...

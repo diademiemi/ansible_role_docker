@@ -34,6 +34,7 @@ Variable | Default | Description
 `docker_uninstall_old_packages` | See [vars/](./vars) | Which packages to install when `__role_action` is `uninstall_old`
 `docker_el_os_name` | See [vars/](./vars) | Repository name for RHEL-based Linux operating systems
 `docker_install_pip_packages` | `true` | Whether to the Docker Python package
+`docker_pip_global_packages` | See [vars/default.yml](./vars/default.yml) | Global Python packages to install
 <!--
 `variable` | `default` | Variable example
 `long_variable` | See [defaults/main.yml](./defaults/main.yml) | Variable referring to defaults

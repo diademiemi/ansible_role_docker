@@ -1,3 +1,7 @@
 ---
+_docker_pip_global_packages:
+  - name: docker
+  - name: docker-compose
+  - name: PyYAML
 
 ...
