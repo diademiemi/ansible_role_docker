@@ -2,7 +2,6 @@
 _docker_packages_opensuse:
   - docker
   - docker-compose
-  - python3-docker-compose
 
 _docker_packages_sles_s390x:
   - docker-ce
