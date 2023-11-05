@@ -1,0 +1,17 @@
+---
+_docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin
+  - docker-compose
+
+_docker_uninstall_old_packages:
+  - docker
+  - docker-egine
+  - docker.io
+  - containerd
+  - runc
+
+...
