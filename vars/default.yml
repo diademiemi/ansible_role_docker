@@ -1,6 +1,7 @@
 ---
 _docker_pip_global_packages:
   - name: docker
+    version: ">=6.0.0,<7.0.0"
   - name: docker-compose
   - name: PyYAML
 
